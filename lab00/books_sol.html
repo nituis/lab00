@@ -1,0 +1,45 @@
+<html>
+<head>
+<style>
+table, th, td {
+   border: 1px solid black;
+}
+</style>
+<title>Creation of array object in javascript using JSON</title>
+<script language="javascript" >
+document.writeln("<h2>JSON array object</h2>");
+var books = { 
+	"Pascal" : [ 
+	  { "Name"  : "Pascal Made Simple", "Price" : 700, "Stock": 80 },
+	  { "Name"  : "Guide to Pascal", "Price" : 400, "Stock": 0 }
+	],                       
+	"Scala"  : [
+	  { "Name"  : "Scala for the ImpatPent", "Price" : 1000, "Stock": 23 }, 
+	  { "Name"  : "Scala in Depth", "Price" : 1300, "Stock": 10 }	     
+	]    
+}    
+document.writeln("<table>");
+document.writeln("<tr><th>Name</th><th>Price</th><th>Stock</th></tr>");
+var totalStockValue = 0;
+for(var i=0;i<books.Pascal.length;i++)
+{	
+	document.writeln("<tr><td>"+books.Pascal[i].Name+ "</td>"+
+	  "<td>"+books.Pascal[i].Price+"</td>"+
+          "<td>"+books.Pascal[i].Stock+"</tr>");
+	totalStockValue += books.Pascal[i].Stock * books.Pascal[i].Price;
+}
+for(i=0;i<books.Scala.length;i++)
+{
+	document.writeln("<tr><td>"+books.Scala[i].Name+ "</td>"+
+	  "<td>"+books.Scala[i].Price+"</td>"+
+          "<td>"+books.Scala[i].Stock+"</tr>");
+	totalStockValue += books.Scala[i].Stock * books.Scala[i].Price;
+}
+
+document.writeln("</table>");
+document.writeln("<h2>Total Stock Value: $" + totalStockValue + "</h2>");
+</script>
+</head>
+<body>
+</body>
+</html>
